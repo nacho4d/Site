@@ -1,74 +1,128 @@
-#left {
-	position: absolute;
-	left: 0;
-	top: 0;
-	background-color: lime;
-	width: 90px;
-	height: 100%;
-	background-image: url("./img/wood.png");
-	background-repeat: no-repeat;
+div#left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: lime;
+  width: 90px;
+  height: 100%;
+  background-image: url('./img/wood.png');
+  background-repeat: no-repeat;
 }
 
-#right {
-	z-index: 10;
-	position: absolute;
-	height: 100%;
-	left: 90px;
-	right: 0;
-	top: 0;
-	background-color: gray;
-	
-	padding:10px;
+div#right {
+  z-index: 10;
+  position: absolute;
+  height: 100%;
+  left: 90px;
+  right: 0;
+  top: 0;
+  background-color: gray;
+  
+  padding:10px;
 
-	-moz-box-shadow: -3px 0px 10px #000;
-	-webkit-box-shadow: -3px 0px 10px #000;
-	box-shadow: -3px 0px 10px #000;
+  -moz-box-shadow: -3px 0px 10px #000;
+  -webkit-box-shadow: -3px 0px 10px #000;
+  box-shadow: -3px 0px 10px #000;
 
-	background-image: -ms-linear-gradient(right, #FFFFFF 0%, #EFEBEA 100%);
-	background-image: -moz-linear-gradient(right, #FFFFFF 0%, #EFEBEA 100%);
-	background-image: -o-linear-gradient(right, #FFFFFF 0%, #EFEBEA 100%);
-	background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #FFFFFF), color-stop(1, #EFEBEA));
-	background-image: -webkit-linear-gradient(right, #FFFFFF 0%, #EFEBEA 100%);
-	background-image: linear-gradient(right, #FFFFFF 0%, #EFEBEA 100%);
-
-}
-#header-container{
-	width: 710px;
-	padding: inherit;
-}
-#header{
+  background-image: -ms-linear-gradient(right, #FFFFFF 0%, #EFEBEA 100%);
+  background-image: -moz-linear-gradient(right, #FFFFFF 0%, #EFEBEA 100%);
+  background-image: -o-linear-gradient(right, #FFFFFF 0%, #EFEBEA 100%);
+  background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #FFFFFF), color-stop(1, #EFEBEA));
+  background-image: -webkit-linear-gradient(right, #FFFFFF 0%, #EFEBEA 100%);
+  background-image: linear-gradient(right, #FFFFFF 0%, #EFEBEA 100%);
 
 }
-#footer-container{
-	width: 710px;
-	padding: inherit;
+div#header-container{
+  width: 710px;
+  padding: inherit;
 }
-#footer{
+div#header{
 
 }
-#square-container{
-	width: 710px;
-	height: 85%;
-	overflow:auto;
-	padding: inherit;
+div#footer-container{
+  width: 710px;
+  padding: inherit;
+}
+div#footer{
+
+}
+div#square-container{
+  width: 710px;
+  height: 85%;
+  overflow:auto;
+  padding: inherit;
 }
 .square{
-	border-radius: 5px;
-	width: 220px;
-	height: 220px;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	position: relative;
-	float: left;
+  border-radius: 5px;
+  width: 215px;
+  height: 215px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  float: left;
 }
 .translate {
-	-webkit-transform-origin:0 0;
-	-webkit-transform: translate(100px, 20px);
-	-webkit-transition:-webkit-transform 0.5s ease-in-out; 
+  -webkit-transform-origin:0 0;
+  -webkit-transform: translate(100px, 20px);
+  -webkit-transition:-webkit-transform 0.5s ease-in-out; 
 }
 /* for debug */
 .bordered{
-	border-color: gray;
-	border-width: 1px;
-	border-style: dashed;
+  border-color: gray;
+  border-width: 1px;
+  border-style: dashed;
+}
+
+/* Search field */
+
+div#search-bar-container
+{
+  height: 80px;
+  width: 710px; /* same as square-container */
+  padding: inherit;
+}
+div#search-bar{
+  border-color: #B4D7FF;
+}
+#search-bar input[type=text]:focus {
+  /* Disable the standard focus, it will be done in .focused-box */
+  outline: none;
+}
+div#search-bar input[type=text]
+{
+  font-family: "Andale Mono", monospace; /*should I define this in #right? */
+  font-size: 110%; /*should I define this in #right? */
+  color: #555555; /* same, should I define this in #right? */
+
+  background: #ffffff url('./img/loupe.png') no-repeat right center;
+  height:  22px;
+  width: 250px;
+  border-radius: 20px; /*Opera and IE does not support this */
+  margin-left: 350px; /* = (square.width * 3) - search-bar.width */
+  
+  padding-left: 10px; /* Adjust padding to avoid text and corner overlapping */
+  padding-right: 25px; /* Adjust padding to avoid text and corner overlapping */  
+}
+/*
+#search-field{
+padding-left: 35px;
+padding-right: 35px;
+}
+*/
+.focused-box{
+  /* focus ring color */
+  -moz-box-shadow: 1px 1px 10px #78abdd;
+  -webkit-box-shadow: 1px 1px 10px #78abdd;
+  box-shadow: 1px 1px 10px #78abdd;
+  -webkit-transition: ll 1.5s ease-out
+}
+
+.unfocused-box{
+  -webkit-transition: ll 0.12s ease-out
+}
+::-webkit-input-placeholder {
+   color: #999999;
+}
+:-moz-placeholder {
+   color: #999999;
 }
